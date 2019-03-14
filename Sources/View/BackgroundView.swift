@@ -10,7 +10,7 @@ import UIKit
 
 final public class BackgroundView: UIView {
     
-    public var style: HUDBackgroundStyle = .blur {
+    public var style: HUDBackgroundStyle = .solidColor {
         didSet {
             if style != oldValue { updateForBackgroundStyle() }
         }
@@ -28,14 +28,14 @@ final public class BackgroundView: UIView {
         }
     }
     
-    private var effectView: UIVisualEffectView?
+    public private(set) var effectView: UIVisualEffectView?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
     
-    public required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
     }

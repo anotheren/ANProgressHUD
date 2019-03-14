@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A04A4DDF223893CE00AA89AD /* BarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04A4DDE223893CE00AA89AD /* BarProgressView.swift */; };
+		A04A4DE12239E06A00AA89AD /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04A4DE02239E06A00AA89AD /* ProgressView.swift */; };
+		A04A4DE7223A4E7F00AA89AD /* Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04A4DE6223A4E7F00AA89AD /* Default.swift */; };
+		A04A4DEF223A4F1300AA89AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04A4DEE223A4F1300AA89AD /* AppDelegate.swift */; };
+		A04A4DF1223A4F1300AA89AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04A4DF0223A4F1300AA89AD /* ViewController.swift */; };
+		A04A4DF4223A4F1300AA89AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04A4DF2223A4F1300AA89AD /* Main.storyboard */; };
+		A04A4DF6223A4F1600AA89AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04A4DF5223A4F1600AA89AD /* Assets.xcassets */; };
+		A04A4DF9223A4F1600AA89AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04A4DF7223A4F1600AA89AD /* LaunchScreen.storyboard */; };
+		A0973846223A5966004EB970 /* ANProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E6685422321B0F00F29772 /* ANProgressHUD.framework */; };
+		A0973847223A5966004EB970 /* ANProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0E6685422321B0F00F29772 /* ANProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0B25E8522325FE20051148A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B25E8422325FE20051148A /* BackgroundView.swift */; };
 		A0B25E8722326B920051148A /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B25E8622326B920051148A /* RoundedButton.swift */; };
 		A0B25E8D22327A7C0051148A /* HUDBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B25E8C22327A7C0051148A /* HUDBase.swift */; };
 		A0B25E8F22327A920051148A /* HUDCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B25E8E22327A920051148A /* HUDCompatible.swift */; };
 		A0B25E9122327AC00051148A /* HUD+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B25E9022327AC00051148A /* HUD+UIView.swift */; };
+		A0B4F67922375A7F00525B2D /* Ex+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B4F67822375A7F00525B2D /* Ex+UIFont.swift */; };
 		A0E6685E22321B0F00F29772 /* ANProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E6685422321B0F00F29772 /* ANProgressHUD.framework */; };
 		A0E6686322321B0F00F29772 /* ANProgressHUDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6686222321B0F00F29772 /* ANProgressHUDTests.swift */; };
 		A0E6686522321B0F00F29772 /* ANProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = A0E6685722321B0F00F29772 /* ANProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -19,9 +30,17 @@
 		A0E6687122323D6000F29772 /* HUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6687022323D6000F29772 /* HUDAnimation.swift */; };
 		A0E6687322323EA800F29772 /* HUDBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6687222323EA800F29772 /* HUDBackgroundStyle.swift */; };
 		A0E6687522323EFB00F29772 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6687422323EFB00F29772 /* ProgressHUD.swift */; };
+		A0FB31042237757B00422659 /* RoundProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB31032237757B00422659 /* RoundProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A0973848223A5966004EB970 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0E6684B22321B0F00F29772 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0E6685322321B0F00F29772;
+			remoteInfo = ANProgressHUD;
+		};
 		A0E6685F22321B0F00F29772 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A0E6684B22321B0F00F29772 /* Project object */;
@@ -31,7 +50,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A097384A223A5966004EB970 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A0973847223A5966004EB970 /* ANProgressHUD.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A04A4DDE223893CE00AA89AD /* BarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressView.swift; sourceTree = "<group>"; };
+		A04A4DE02239E06A00AA89AD /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		A04A4DE6223A4E7F00AA89AD /* Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Default.swift; sourceTree = "<group>"; };
+		A04A4DEC223A4F1300AA89AD /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A04A4DEE223A4F1300AA89AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A04A4DF0223A4F1300AA89AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A04A4DF3223A4F1300AA89AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A04A4DF5223A4F1600AA89AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A04A4DF8223A4F1600AA89AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A04A4DFA223A4F1600AA89AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0B25E8422325FE20051148A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		A0B25E8622326B920051148A /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		A0B25E8822327A000051148A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -39,6 +82,7 @@
 		A0B25E8C22327A7C0051148A /* HUDBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDBase.swift; sourceTree = "<group>"; };
 		A0B25E8E22327A920051148A /* HUDCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDCompatible.swift; sourceTree = "<group>"; };
 		A0B25E9022327AC00051148A /* HUD+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HUD+UIView.swift"; sourceTree = "<group>"; };
+		A0B4F67822375A7F00525B2D /* Ex+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIFont.swift"; sourceTree = "<group>"; };
 		A0E6685422321B0F00F29772 /* ANProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ANProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E6685722321B0F00F29772 /* ANProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANProgressHUD.h; sourceTree = "<group>"; };
 		A0E6685822321B0F00F29772 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,9 +93,18 @@
 		A0E6687022323D6000F29772 /* HUDAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDAnimation.swift; sourceTree = "<group>"; };
 		A0E6687222323EA800F29772 /* HUDBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDBackgroundStyle.swift; sourceTree = "<group>"; };
 		A0E6687422323EFB00F29772 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		A0FB31032237757B00422659 /* RoundProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A04A4DE9223A4F1300AA89AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0973846223A5966004EB970 /* ANProgressHUD.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0E6685122321B0F00F29772 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,12 +123,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A04A4DED223A4F1300AA89AD /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				A04A4DEE223A4F1300AA89AD /* AppDelegate.swift */,
+				A04A4DF0223A4F1300AA89AD /* ViewController.swift */,
+				A04A4DF2223A4F1300AA89AD /* Main.storyboard */,
+				A04A4DF5223A4F1600AA89AD /* Assets.xcassets */,
+				A04A4DF7223A4F1600AA89AD /* LaunchScreen.storyboard */,
+				A04A4DFA223A4F1600AA89AD /* Info.plist */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		A0B25E8A22327A320051148A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				A0B25E8C22327A7C0051148A /* HUDBase.swift */,
 				A0B25E8E22327A920051148A /* HUDCompatible.swift */,
 				A0B25E9022327AC00051148A /* HUD+UIView.swift */,
+				A0B4F67822375A7F00525B2D /* Ex+UIFont.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -84,8 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				A0E6687422323EFB00F29772 /* ProgressHUD.swift */,
+				A04A4DE02239E06A00AA89AD /* ProgressView.swift */,
 				A0B25E8422325FE20051148A /* BackgroundView.swift */,
 				A0B25E8622326B920051148A /* RoundedButton.swift */,
+				A0FB31032237757B00422659 /* RoundProgressView.swift */,
+				A04A4DDE223893CE00AA89AD /* BarProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +166,7 @@
 				A0E6686E223238A500F29772 /* HUDMode.swift */,
 				A0E6687022323D6000F29772 /* HUDAnimation.swift */,
 				A0E6687222323EA800F29772 /* HUDBackgroundStyle.swift */,
+				A04A4DE6223A4E7F00AA89AD /* Default.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -107,6 +178,7 @@
 				A0B25E8822327A000051148A /* README.md */,
 				A0E6685622321B0F00F29772 /* Sources */,
 				A0E6686122321B0F00F29772 /* Tests */,
+				A04A4DED223A4F1300AA89AD /* Example */,
 				A0E6685522321B0F00F29772 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +188,7 @@
 			children = (
 				A0E6685422321B0F00F29772 /* ANProgressHUD.framework */,
 				A0E6685D22321B0F00F29772 /* ANProgressHUDTests.xctest */,
+				A04A4DEC223A4F1300AA89AD /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +228,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A04A4DEB223A4F1300AA89AD /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A04A4DFB223A4F1600AA89AD /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				A04A4DE8223A4F1300AA89AD /* Sources */,
+				A04A4DE9223A4F1300AA89AD /* Frameworks */,
+				A04A4DEA223A4F1300AA89AD /* Resources */,
+				A097384A223A5966004EB970 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0973849223A5966004EB970 /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Example;
+			productReference = A04A4DEC223A4F1300AA89AD /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A0E6685322321B0F00F29772 /* ANProgressHUD */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0E6686822321B0F00F29772 /* Build configuration list for PBXNativeTarget "ANProgressHUD" */;
@@ -201,6 +293,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = anotheren.com;
 				TargetAttributes = {
+					A04A4DEB223A4F1300AA89AD = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					A0E6685322321B0F00F29772 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
@@ -216,6 +311,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = A0E6684A22321B0F00F29772;
 			productRefGroup = A0E6685522321B0F00F29772 /* Products */;
@@ -224,11 +320,22 @@
 			targets = (
 				A0E6685322321B0F00F29772 /* ANProgressHUD */,
 				A0E6685C22321B0F00F29772 /* ANProgressHUDTests */,
+				A04A4DEB223A4F1300AA89AD /* Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A04A4DEA223A4F1300AA89AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A04A4DF9223A4F1600AA89AD /* LaunchScreen.storyboard in Resources */,
+				A04A4DF6223A4F1600AA89AD /* Assets.xcassets in Resources */,
+				A04A4DF4223A4F1300AA89AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0E6685222321B0F00F29772 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,19 +353,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A04A4DE8223A4F1300AA89AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A04A4DF1223A4F1300AA89AD /* ViewController.swift in Sources */,
+				A04A4DEF223A4F1300AA89AD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0E6685022321B0F00F29772 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A0B25E8522325FE20051148A /* BackgroundView.swift in Sources */,
+				A04A4DDF223893CE00AA89AD /* BarProgressView.swift in Sources */,
+				A0FB31042237757B00422659 /* RoundProgressView.swift in Sources */,
 				A0E6687322323EA800F29772 /* HUDBackgroundStyle.swift in Sources */,
 				A0E6687122323D6000F29772 /* HUDAnimation.swift in Sources */,
 				A0B25E9122327AC00051148A /* HUD+UIView.swift in Sources */,
 				A0B25E8722326B920051148A /* RoundedButton.swift in Sources */,
+				A0B4F67922375A7F00525B2D /* Ex+UIFont.swift in Sources */,
 				A0E6687522323EFB00F29772 /* ProgressHUD.swift in Sources */,
+				A04A4DE7223A4E7F00AA89AD /* Default.swift in Sources */,
 				A0E6686F223238A500F29772 /* HUDMode.swift in Sources */,
 				A0B25E8D22327A7C0051148A /* HUDBase.swift in Sources */,
 				A0B25E8F22327A920051148A /* HUDCompatible.swift in Sources */,
+				A04A4DE12239E06A00AA89AD /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +394,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A0973849223A5966004EB970 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0E6685322321B0F00F29772 /* ANProgressHUD */;
+			targetProxy = A0973848223A5966004EB970 /* PBXContainerItemProxy */;
+		};
 		A0E6686022321B0F00F29772 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A0E6685322321B0F00F29772 /* ANProgressHUD */;
@@ -280,7 +406,64 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		A04A4DF2223A4F1300AA89AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A04A4DF3223A4F1300AA89AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A04A4DF7223A4F1600AA89AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A04A4DF8223A4F1600AA89AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		A04A4DFC223A4F1600AA89AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7SA22A9L3L;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anotheren.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A04A4DFD223A4F1600AA89AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7SA22A9L3L;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.anotheren.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A0E6686622321B0F00F29772 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -501,6 +684,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A04A4DFB223A4F1600AA89AD /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A04A4DFC223A4F1600AA89AD /* Debug */,
+				A04A4DFD223A4F1600AA89AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A0E6684E22321B0F00F29772 /* Build configuration list for PBXProject "ANProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
