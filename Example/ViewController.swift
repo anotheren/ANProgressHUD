@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showText(_ sender: UIButton) {
-        view.hud.show(text: "hello", animated: true, hideAfter: 10)
+        view.hud.show(text: "hello") { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.view.hud.show(text: "显示结束")
+        }
     }
     
     @IBAction func showTextAndDetail(_ sender: UIButton) {
