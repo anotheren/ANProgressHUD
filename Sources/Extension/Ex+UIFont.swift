@@ -11,10 +11,10 @@ import UIKit
 extension UIFont {
     
     static var label: UIFont {
-        return UIFont.systemFont(ofSize: 16, weight: .regular)
+        return UIFont.systemFont(ofSize: 16, weight: .medium)
     }
     
     static var detailLabel: UIFont {
-        return UIFont.systemFont(ofSize: 12, weight: .regular)
+        return UIFont.systemFont(ofSize: 14, weight: .medium)
     }
 }

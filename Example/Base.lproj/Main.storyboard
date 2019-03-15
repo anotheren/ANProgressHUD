@@ -36,13 +36,25 @@
                                     <action selector="showText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rKi-JW-0eO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIx-U8-ZA1">
+                                <rect key="frame" x="24" y="160" width="135" height="34"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="show Text&amp;Detail"/>
+                                <connections>
+                                    <action selector="showText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qss-1q-5Dt"/>
+                                    <action selector="showTextAndDetail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GeA-s0-wDQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Kqp-cu-kwe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="HUX-RU-pjB"/>
                             <constraint firstItem="Kqp-cu-kwe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Zsm-1k-Bto"/>
                             <constraint firstItem="90r-47-wmT" firstAttribute="top" secondItem="Kqp-cu-kwe" secondAttribute="bottom" constant="12" id="aan-im-XEu"/>
+                            <constraint firstItem="KIx-U8-ZA1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="k0T-GP-ouv"/>
                             <constraint firstItem="90r-47-wmT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="lxm-Df-Zzb"/>
+                            <constraint firstItem="KIx-U8-ZA1" firstAttribute="top" secondItem="90r-47-wmT" secondAttribute="bottom" constant="12" id="t0C-dp-ldS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

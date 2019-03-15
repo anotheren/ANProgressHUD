@@ -15,23 +15,20 @@ extension HUDBase where Base: UIView {
     public func wait(text: String = "", animated: Bool = true, hideAfter delay: TimeInterval = 0) {
         self.hide()
         let hud = createHUD(mode: .indeterminate)
-        hud.label.text = text
+        hud.textLabel.text = text
         hud.isUserInteractionEnabled = true
         hud.hide(animined: animated, after: delay > 0 ? delay : 30)
     }
     
-    public func show(text: String, animated: Bool = true, hideAfter delay: TimeInterval = 0) {
-        self.show(text: text, hideAfter: delay, completion: nil)
-    }
-    
-    public func show(text: String, animated: Bool = true, hideAfter delay: TimeInterval = 0, isUserInteractionEnabled: Bool = false, completion handler: ProgressHUDCompletionBlock? = nil) {
+    public func show(text: String, detail: String = "", animated: Bool = true, hideAfter delay: TimeInterval = 0, isUserInteractionEnabled: Bool = false, completion handler: ProgressHUDCompletionBlock? = nil) {
         self.hide()
         if delay > 0 && text.count == 0 {
             return
         }
         
         let hud = createHUD(mode: .text)
-        hud.label.text = text
+        hud.textLabel.text = text
+        hud.detailLabel.text = detail
         hud.isUserInteractionEnabled = isUserInteractionEnabled
         
         let delayTime = delay > 0 ? delay : 1
@@ -47,11 +44,13 @@ extension HUDBase where Base: UIView {
     }
     
     private func createHUD(mode: HUDMode, animated: Bool = true) -> ProgressHUD {
+        let appearance = UIActivityIndicatorView.appearance(whenContainedInInstancesOf: [ProgressHUD.self])
+        appearance.color = UIColor.white
         let hud = ProgressHUD.show(to: base, animated: animated)
         base.bringSubviewToFront(hud)
         hud.mode = mode
         hud.bezelView.backgroundColor = UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 1)
-        hud.label.textColor = UIColor.white
+        hud.textLabel.textColor = UIColor.white
         return hud
     }
 }

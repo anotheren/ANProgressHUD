@@ -83,7 +83,7 @@ final public class ProgressHUD: UIView {
         return view
     }()
     
-    public private(set) lazy var label: UILabel = {
+    public private(set) lazy var textLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.adjustsFontSizeToFitWidth = false
         view.textAlignment = .center
@@ -364,7 +364,7 @@ extension ProgressHUD {
         addSubview(bezelView)
         updateBezelMotionEffects()
         
-        for view in [label, detailLabel] {
+        for view in [textLabel, detailLabel] {
             view.translatesAutoresizingMaskIntoConstraints = false
             view.setContentHuggingPriority(UILayoutPriority(998), for: .horizontal)
             view.setContentHuggingPriority(UILayoutPriority(998), for: .vertical)
@@ -436,7 +436,7 @@ extension ProgressHUD {
     }
     
     private func updateViews(for color: UIColor) {
-        label.textColor = color
+        textLabel.textColor = color
         detailLabel.textColor = color
         
         // UIAppearance settings are prioritized. If they are preset the set color is ignored.
@@ -501,7 +501,7 @@ extension ProgressHUD {
         
         let metrics = ["margin": margin]
         
-        var subviews: [UIView] = [topSpacer, label, detailLabel, bottomSpacer]
+        var subviews: [UIView] = [topSpacer, textLabel, detailLabel, bottomSpacer]
         if let indicator = indicator {
             subviews.insert(indicator, at: 1)
         }

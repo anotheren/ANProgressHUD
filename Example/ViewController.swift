@@ -22,4 +22,8 @@ class ViewController: UIViewController {
     @IBAction func showText(_ sender: UIButton) {
         view.hud.show(text: "hello", animated: true, hideAfter: 10)
     }
+    
+    @IBAction func showTextAndDetail(_ sender: UIButton) {
+        view.hud.show(text: "hello", detail: "hello world!hello world!hello world!hello world!hello world!hello world!hello world!", animated: true, hideAfter: 10)
+    }
 }
