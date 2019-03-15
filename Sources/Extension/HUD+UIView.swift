@@ -49,8 +49,6 @@ extension HUDBase where Base: UIView {
         let hud = ProgressHUD.show(to: base, animated: animated)
         base.bringSubviewToFront(hud)
         hud.mode = mode
-        hud.bezelView.backgroundColor = UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 1)
-        hud.textLabel.textColor = UIColor.white
         return hud
     }
 }

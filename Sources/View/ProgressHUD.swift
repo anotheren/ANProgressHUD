@@ -76,7 +76,6 @@ final public class ProgressHUD: UIView {
     
     public private(set) lazy var bezelView: BackgroundView = {
         let view = BackgroundView(frame: bounds)
-        view.style = .blur
         view.color = contentColor
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 12.0
