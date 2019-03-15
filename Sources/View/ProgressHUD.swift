@@ -77,6 +77,7 @@ final public class ProgressHUD: UIView {
     public private(set) lazy var bezelView: BackgroundView = {
         let view = BackgroundView(frame: bounds)
         view.style = .blur
+        view.color = contentColor
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 12.0
         view.alpha = 0
@@ -87,8 +88,8 @@ final public class ProgressHUD: UIView {
         let view = UILabel(frame: .zero)
         view.adjustsFontSizeToFitWidth = false
         view.textAlignment = .center
-        view.textColor = contentColor
-        view.font = .label
+        view.textColor = .white
+        view.font = .textLabel
         view.isOpaque = false
         view.backgroundColor = .clear
         return view
@@ -98,7 +99,7 @@ final public class ProgressHUD: UIView {
         let view = UILabel(frame: .zero)
         view.adjustsFontSizeToFitWidth = false
         view.textAlignment = .center
-        view.textColor = contentColor
+        view.textColor = .white
         view.numberOfLines = 0
         view.font = .detailLabel
         view.isOpaque = false
@@ -436,9 +437,6 @@ extension ProgressHUD {
     }
     
     private func updateViews(for color: UIColor) {
-        textLabel.textColor = color
-        detailLabel.textColor = color
-        
         // UIAppearance settings are prioritized. If they are preset the set color is ignored.
         
         switch indicator {
