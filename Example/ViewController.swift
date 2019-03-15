@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showText(_ sender: UIButton) {
-        view.hud.show(text: "hello") { [weak self] in
+        view.hud.show(text: "无法解析服务器响应", hideAfter: 10) { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.view.hud.show(text: "显示结束")
         }

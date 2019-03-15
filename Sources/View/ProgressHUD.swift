@@ -35,7 +35,7 @@ final public class ProgressHUD: UIView {
             if offset != oldValue { setNeedsUpdateConstraints() }
         }
     }
-    public var margin: CGFloat = 20.0 {
+    public var margin: CGFloat = 15.0 {
         didSet {
             if margin != oldValue { setNeedsUpdateConstraints() }
         }
