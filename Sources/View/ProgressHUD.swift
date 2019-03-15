@@ -28,7 +28,7 @@ final public class ProgressHUD: UIView {
             if mode != oldValue { updateIndicators() }
         }
     }
-    public var contentColor: UIColor = UIColor(white: 0.0, alpha: 0.7)
+    public var contentColor: UIColor = UIColor(white: 0.0, alpha: 0.8)
     public var animationType: HUDAnimation = .fade
     public var offset: CGPoint = .zero {
         didSet {
@@ -76,8 +76,9 @@ final public class ProgressHUD: UIView {
     
     public private(set) lazy var bezelView: BackgroundView = {
         let view = BackgroundView(frame: bounds)
+        view.style = .blur
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 5.0
+        view.layer.cornerRadius = 12.0
         view.alpha = 0
         return view
     }()
@@ -102,14 +103,6 @@ final public class ProgressHUD: UIView {
         view.font = .detailLabel
         view.isOpaque = false
         view.backgroundColor = .clear
-        return view
-    }()
-    
-    public private(set) lazy var button: UIButton = {
-        let view = UIButton(type: .custom)
-        view.titleLabel?.textAlignment = .center
-        view.titleLabel?.font = .detailLabel
-        view.setTitleColor(contentColor, for: .normal)
         return view
     }()
     
@@ -371,7 +364,7 @@ extension ProgressHUD {
         addSubview(bezelView)
         updateBezelMotionEffects()
         
-        for view in [label, detailLabel, button] {
+        for view in [label, detailLabel] {
             view.translatesAutoresizingMaskIntoConstraints = false
             view.setContentHuggingPriority(UILayoutPriority(998), for: .horizontal)
             view.setContentHuggingPriority(UILayoutPriority(998), for: .vertical)
@@ -445,7 +438,6 @@ extension ProgressHUD {
     private func updateViews(for color: UIColor) {
         label.textColor = color
         detailLabel.textColor = color
-        button.setTitleColor(color, for: .normal)
         
         // UIAppearance settings are prioritized. If they are preset the set color is ignored.
         
@@ -509,7 +501,7 @@ extension ProgressHUD {
         
         let metrics = ["margin": margin]
         
-        var subviews: [UIView] = [topSpacer, label, detailLabel, button, bottomSpacer]
+        var subviews: [UIView] = [topSpacer, label, detailLabel, bottomSpacer]
         if let indicator = indicator {
             subviews.insert(indicator, at: 1)
         }

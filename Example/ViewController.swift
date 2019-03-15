@@ -13,14 +13,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.hud.wait()
-        
-//        view.hud.show(text: "12345678901234567890", animated: true, hideAfter: 300)
-
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func showWait(_ sender: UIButton) {
+        view.hud.wait()
+    }
+    
+    @IBAction func showText(_ sender: UIButton) {
+        view.hud.show(text: "hello", animated: true, hideAfter: 10)
+    }
 }
-

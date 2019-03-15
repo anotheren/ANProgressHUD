@@ -16,7 +16,7 @@ extension HUDBase where Base: UIView {
         self.hide()
         let hud = createHUD(mode: .indeterminate)
         hud.label.text = text
-        hud.isUserInteractionEnabled = false
+        hud.isUserInteractionEnabled = true
         hud.hide(animined: animated, after: delay > 0 ? delay : 30)
     }
     
