@@ -20,6 +20,10 @@ extension HUDBase where Base: UIView {
         hud.hide(animined: animated, after: delay > 0 ? delay : 30)
     }
     
+    public func show(text: String, hideAfter delay: TimeInterval = 0, completion handler: ProgressHUDCompletionBlock? = nil) {
+        self.show(text: text, detail: "", animated: true, hideAfter: delay, isUserInteractionEnabled: false, completion: handler)
+    }
+    
     public func show(text: String, detail: String = "", animated: Bool = true, hideAfter delay: TimeInterval = 0, isUserInteractionEnabled: Bool = false, completion handler: ProgressHUDCompletionBlock? = nil) {
         self.hide()
         if delay > 0 && text.count == 0 {
