@@ -12,21 +12,25 @@ extension UIView: HUDCompatible { }
 
 extension HUDBase where Base: UIView {
     
-    public func wait(text: String = "", animated: Bool = true, hideAfter delay: TimeInterval = 0) {
+    public func wait(text: String) {
+        wait(text: text, animated: true, hideAfter: 30)
+    }
+    
+    public func wait(text: String = "", animated: Bool = true, hideAfter delay: TimeInterval = 30) {
         self.hide()
         let hud = createHUD(mode: .indeterminate)
         hud.textLabel.text = text
         hud.isUserInteractionEnabled = true
-        hud.hide(animined: animated, after: delay > 0 ? delay : 30)
+        hud.hide(animined: animated, after: delay)
     }
     
-    public func show(text: String, hideAfter delay: TimeInterval = 0, completion handler: ProgressHUDCompletionBlock? = nil) {
+    public func show(text: String, hideAfter delay: TimeInterval = 1, completion handler: ProgressHUDCompletionBlock? = nil) {
         self.show(text: text, detail: "", animated: true, hideAfter: delay, isUserInteractionEnabled: false, completion: handler)
     }
     
-    public func show(text: String, detail: String = "", animated: Bool = true, hideAfter delay: TimeInterval = 0, isUserInteractionEnabled: Bool = false, completion handler: ProgressHUDCompletionBlock? = nil) {
+    public func show(text: String, detail: String = "", animated: Bool = true, hideAfter delay: TimeInterval = 1, isUserInteractionEnabled: Bool = false, completion handler: ProgressHUDCompletionBlock? = nil) {
         self.hide()
-        if delay > 0 && text.count == 0 {
+        if delay > 0, text.isEmpty {
             return
         }
         
@@ -35,11 +39,10 @@ extension HUDBase where Base: UIView {
         hud.detailLabel.text = detail
         hud.isUserInteractionEnabled = isUserInteractionEnabled
         
-        let delayTime = delay > 0 ? delay : 1
-        hud.hide(animined: animated, after: delayTime)
+        hud.hide(animined: animated, after: delay)
         
         if let handler = handler {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delayTime, execute: handler)
+            DispatchQueue.main.asyncAfter(deadline: .now()+delay, execute: handler)
         }
     }
     
