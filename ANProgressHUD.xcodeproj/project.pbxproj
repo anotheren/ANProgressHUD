@@ -75,6 +75,7 @@
 		A04A4DF5223A4F1600AA89AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A04A4DF8223A4F1600AA89AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A04A4DFA223A4F1600AA89AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A068AB002369852500C6D765 /* ANProgressHUD.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = ANProgressHUD.podspec; sourceTree = "<group>"; };
 		A0B25E8422325FE20051148A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		A0B25E8622326B920051148A /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		A0B25E8822327A000051148A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -176,6 +177,7 @@
 			children = (
 				A0B25E8922327A000051148A /* LICENSE */,
 				A0B25E8822327A000051148A /* README.md */,
+				A068AB002369852500C6D765 /* ANProgressHUD.podspec */,
 				A0E6685622321B0F00F29772 /* Sources */,
 				A0E6686122321B0F00F29772 /* Tests */,
 				A04A4DED223A4F1300AA89AD /* Example */,
@@ -608,6 +610,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anotheren.ANProgressHUD;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -637,6 +640,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.anotheren.ANProgressHUD;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
