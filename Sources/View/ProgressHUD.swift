@@ -164,7 +164,7 @@ extension ProgressHUD {
     public class func hide(for view: UIView, animated: Bool) -> Bool {
         guard let hud = hud(for: view) else { return false }
         hud.removeFromSuperViewOnHide = true
-        hud.hide(animined: animated)
+        hud.hide(animated: animated)
         return true
     }
     
@@ -185,43 +185,54 @@ extension ProgressHUD {
     
     public func show(animated: Bool) {
         assert(Thread.isMainThread, "needs to be accessed on the main thread.")
-        graceTimer?.invalidate()
-        useAnimation = animated
-        hasFinished = false
-        // If the grace time is set, postpone the HUD display
-        if graceTime > 0 {
-            let timer = Timer(timeInterval: graceTime, target: self, selector: #selector(handle(graceTimer:)), userInfo: nil, repeats: false)
-            RunLoop.current.add(timer, forMode: .common)
-            graceTimer = timer
-        } else {
-            show(using: useAnimation)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.graceTimer?.invalidate()
+            self.useAnimation = animated
+            self.hasFinished = false
+            // If the grace time is set, postpone the HUD display
+            if self.graceTime > 0 {
+                let timer = Timer(timeInterval: self.graceTime, target: self, selector: #selector(self.handle(graceTimer:)), userInfo: nil, repeats: false)
+                RunLoop.current.add(timer, forMode: .common)
+                self.graceTimer = timer
+            } else {
+                self.show(using: animated)
+            }
         }
     }
     
-    public func hide(animined: Bool) {
+    public func hide(animated: Bool) {
         assert(Thread.isMainThread, "needs to be accessed on the main thread.")
-        graceTimer?.invalidate()
-        useAnimation = animined
-        hasFinished = true
-        // If the minShow time is set, calculate how long the HUD was shown,
-        // and postpone the hiding operation if necessary
-        if minShowTime > 0, let showStarted = showStarted {
-            let timeInterval = Date().timeIntervalSince(showStarted)
-            if timeInterval < minShowTime {
-                let timer = Timer(timeInterval: minShowTime-timeInterval, target: self, selector: #selector(handle(minShowTimer:)), userInfo: nil, repeats: false)
-                RunLoop.current.add(timer, forMode: .common)
-                minShowTimer = timer
-                return
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.graceTimer?.invalidate()
+            self.useAnimation = animated
+            self.hasFinished = true
+            // If the minShow time is set, calculate how long the HUD was shown,
+            // and postpone the hiding operation if necessary
+            if self.minShowTime > 0, let showStarted = self.showStarted {
+                let timeInterval = Date().timeIntervalSince(showStarted)
+                if timeInterval < self.minShowTime {
+                    let timer = Timer(timeInterval: self.minShowTime-timeInterval, target: self, selector: #selector(self.handle(minShowTimer:)), userInfo: nil, repeats: false)
+                    RunLoop.current.add(timer, forMode: .common)
+                    self.minShowTimer = timer
+                    return
+                }
             }
+            self.hide(using: animated)
         }
-        hide(using: useAnimation)
+        
     }
     
     public func hide(animined: Bool, after delay: TimeInterval) {
-        hideDelayTimer?.invalidate()
-        let timer = Timer(timeInterval: delay, target: self, selector: #selector(handle(hideTimer:)), userInfo: animined, repeats: false)
-        RunLoop.current.add(timer, forMode: .common)
-        hideDelayTimer = timer
+        assert(Thread.isMainThread, "needs to be accessed on the main thread.")
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.hideDelayTimer?.invalidate()
+            let timer = Timer(timeInterval: delay, target: self, selector: #selector(self.handle(hideTimer:)), userInfo: animined, repeats: false)
+            RunLoop.current.add(timer, forMode: .common)
+            self.hideDelayTimer = timer
+        }
     }
     
     private func show(using animated: Bool) {
