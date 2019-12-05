@@ -17,11 +17,13 @@ extension HUDBase where Base: UIView {
     }
     
     public func wait(text: String = "", animated: Bool = true, hideAfter delay: TimeInterval = 30) {
-        self.hide()
-        let hud = createHUD(mode: .indeterminate)
-        hud.textLabel.text = text
-        hud.isUserInteractionEnabled = true
-        hud.hide(animined: animated, after: delay)
+        DispatchQueue.main.async {
+            self.hide()
+            let hud = self.createHUD(mode: .indeterminate)
+            hud.textLabel.text = text
+            hud.isUserInteractionEnabled = true
+            hud.hide(animined: animated, after: delay)
+        }
     }
     
     public func show(text: String, hideAfter delay: TimeInterval = 1, completion handler: ProgressHUDCompletionBlock? = nil) {
@@ -29,25 +31,29 @@ extension HUDBase where Base: UIView {
     }
     
     public func show(text: String, detail: String = "", animated: Bool = true, hideAfter delay: TimeInterval = 1, isUserInteractionEnabled: Bool = false, completion handler: ProgressHUDCompletionBlock? = nil) {
-        self.hide()
-        if delay > 0, text.isEmpty {
-            return
-        }
-        
-        let hud = createHUD(mode: .text)
-        hud.textLabel.text = text
-        hud.detailLabel.text = detail
-        hud.isUserInteractionEnabled = isUserInteractionEnabled
-        
-        hud.hide(animined: animated, after: delay)
-        
-        if let handler = handler {
-            DispatchQueue.main.asyncAfter(deadline: .now()+delay, execute: handler)
+        DispatchQueue.main.async {
+            self.hide()
+            if delay > 0, text.isEmpty {
+                return
+            }
+            
+            let hud = self.createHUD(mode: .text)
+            hud.textLabel.text = text
+            hud.detailLabel.text = detail
+            hud.isUserInteractionEnabled = isUserInteractionEnabled
+            
+            hud.hide(animined: animated, after: delay)
+            
+            if let handler = handler {
+                DispatchQueue.main.asyncAfter(deadline: .now()+delay, execute: handler)
+            }
         }
     }
     
     public func hide(animated: Bool = true) {
-        ProgressHUD.hide(for: base, animated: animated)
+        DispatchQueue.main.async {
+            ProgressHUD.hide(for: self.base, animated: animated)
+        }
     }
     
     private func createHUD(mode: HUDMode, animated: Bool = true) -> ProgressHUD {
